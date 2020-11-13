@@ -1,3 +1,8 @@
+*.jpg
+*.png
+*.tif
+*.pdf
+*.gif
 .vscode
 *.cfg
 *.mdb

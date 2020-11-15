@@ -28,7 +28,7 @@ def link_budget_calculation(
     system_noise_temperature,
     implementation_margin,
     system_c_to_n,
-    bit_per_symbol
+    bit_per_second
 ):
     table.add_row([direction,' ', '', '', ''])
     table.add_row(['','Transmitter power', 'dBW', '+', transmitter_minimum_input_power])
@@ -59,13 +59,13 @@ def link_budget_calculation(
     table.add_row(['','', '', '', ''])
 
     result_c_to_n = received_power - receiver_noise_power
-    result_eb_no = result_c_to_n - 10*math.log10((bit_per_symbol * transmitter_freq_max*math.pow(10,6))/(receiver_bandwidth*math.pow(10,3))) #convert to Hz
+    result_eb_no = result_c_to_n - 10*math.log10((bit_per_second)/(receiver_bandwidth*math.pow(10,3))) #convert to Hz
     table.add_row(['','Receiver S/N', 'dB', '', result_c_to_n])  # derived
     table.add_row(['','Receiver Eb/No', 'dB', '', result_eb_no])  # derived
     table.add_row(['','Implementation S/N margin', 'dB', '', implementation_margin])
     table.add_row(['','', '', '', ''])
 
-    required_eb_no = system_c_to_n - 10*math.log10((bit_per_symbol * transmitter_freq_max*math.pow(10,6))/(receiver_bandwidth*math.pow(10,3)))
+    required_eb_no = system_c_to_n - 10*math.log10((bit_per_second)/(receiver_bandwidth*math.pow(10,3)))
     table.add_row(['','Required S/N', 'dB', '', system_c_to_n])
     table.add_row(['','Required Eb/No', 'dB', '', required_eb_no])
     table.add_row(['','Excess margin', 'dB', '', result_c_to_n - system_c_to_n])

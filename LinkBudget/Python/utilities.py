@@ -50,7 +50,7 @@ class Utilities:
         implementation_margin = float(implementation_margin)
 
         bit_rate = 0
-        bit_rate = input('Bit per symbol: ')
+        bit_rate = input('Bit per second: ')
         while re.match(r'^-?\d+(?:\.\d+)?$', bit_rate) is None:
             bit_rate = input('Bit per symbol again (integer): ')
         bit_rate = float(bit_rate)

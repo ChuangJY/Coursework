@@ -429,7 +429,7 @@ if __name__ == "__main__":
                       receiver_antenna_gain,
                   ))
 
-        system_cable_loss, transmitter_back_off_power, rain_attenuation, implementation_margin, bit_per_symbol = utils.prompt_miscelleneous_loss()
+        system_cable_loss, transmitter_back_off_power, rain_attenuation, implementation_margin, bit_per_second = utils.prompt_miscelleneous_loss()
 
         print("\n******************************")
         print("************Result************")
@@ -454,7 +454,7 @@ if __name__ == "__main__":
             receiver_noise_temperature,
             implementation_margin,
             receiver_c_to_n,
-            bit_per_symbol
+            bit_per_second
         )
 
         con = input("\nContinue? (y/N): ")
